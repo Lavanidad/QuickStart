@@ -20,17 +20,7 @@ import retrofit2.http.Url;
  */
 public interface ApiService {
 
-    public static final String BASE_URL = "http://my.chinayltx.com/";
-
-    /**
-     * 用于下载文件
-     *
-     * @param url
-     * @return
-     */
-    @Streaming
-    @GET
-    Observable<ResponseBody> getDownLoadApk(@Url String url);
+    public static final String BASE_URL = "";
 
 
     /**
