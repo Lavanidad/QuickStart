@@ -52,7 +52,6 @@ public class LoginPresenter extends RxBasePresenter<LoginContract.LoginView> imp
 
                     @Override
                     public void onFailure(Throwable e, String errorMsg) {
-                        Log.d(TAG, "e:" + e.toString() + ",s:" + errorMsg);
                         mView.showLoginFail(errorMsg);
                     }
                 });
