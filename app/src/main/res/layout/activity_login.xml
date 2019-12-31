@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.login.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="83px"
+        android:layout_marginTop="30px"
+        android:gravity="center"
+        android:text="我是LOGO" />
+
+    <View
+        android:layout_width="1018px"
+        android:layout_height="1px"
+        android:layout_marginLeft="31px"
+        android:layout_marginTop="147px"
+        android:background="#BBBBBB" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="231px"
+        android:layout_marginTop="383px"
+        android:text="账号："
+        android:textColor="@android:color/black"
+        android:textSize="40px" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="487px"
+        android:layout_height="67px"
+        android:layout_marginLeft="350px"
+        android:layout_marginTop="379px"
+        android:background="@null"
+        android:hint="请输入账号"
+        android:inputType="number"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/input_grey"
+        android:textSize="40px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="231px"
+        android:layout_marginTop="498px"
+        android:text="密码："
+        android:textColor="#101010"
+        android:textSize="40px" />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="487px"
+        android:layout_height="67px"
+        android:layout_marginLeft="350px"
+        android:layout_marginTop="494px"
+        android:background="@null"
+        android:digits="@string/register_name_digits"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/input_grey"
+        android:textSize="40px" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="619px"
+        android:layout_height="67px"
+        android:layout_marginLeft="231px"
+        android:layout_marginTop="629px"
+        android:background="@color/yello"
+        android:text="登录"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

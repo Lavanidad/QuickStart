@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+
+def cfg = rootProject.ext.configuration
+def libs = rootProject.ext.libraries
+
+android {
+    compileSdkVersion cfg.compileSdkVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //okhttp
+    api "com.squareup.okhttp3:okhttp:${libs.okhttp}"
+    api "com.squareup.okhttp3:logging-interceptor:${libs.okhttp}"
+
+    //retrofit
+    api "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${libs.retrofit}"
+    //rxjava
+    api "io.reactivex.rxjava2:rxjava:${libs.rxjava}"
+    api "io.reactivex.rxjava2:rxandroid:${libs.rxandroid}"
+    api "com.trello.rxlifecycle2:rxlifecycle-components:${libs.rxlifecycler}"
+    //dagger
+    api "com.google.dagger:dagger:${libs.dagger}"
+    api "com.google.dagger:dagger-android:${libs.dagger}"
+    api "com.google.dagger:dagger-android-support:${libs.dagger}"
+    api "org.glassfish:javax.annotation:10.0-b28"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${libs.dagger}"
+    //butterknife
+    api "com.jakewharton:butterknife:${libs.butterknife}"
+    annotationProcessor  "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+    //glide
+    api "com.github.bumptech.glide:glide:${libs.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${libs.glide}"
+    //toasty
+    api "com.github.GrenderG:Toasty:${libs.toasty}"
+    //rxpermission
+    api "com.tbruyelle.rxpermissions2:rxpermissions:${libs.rxpermissions}"
+    //log
+    api "com.orhanobut:logger:${libs.logger}"
+}
